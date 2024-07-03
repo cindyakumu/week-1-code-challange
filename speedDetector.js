@@ -1,5 +1,5 @@
-/*This function deducts points and suspends the driver's licence if demerit points are more than 12*/
-const calculateDemeritPoints =  {
+//the function penalizes the driver if he surpasses the speed limmit
+const calculateDemeritPoints = (speed); {
     const speedLimit = 70;
     const pointsPerExcessSpeed = 5;
   
@@ -7,16 +7,12 @@ const calculateDemeritPoints =  {
       return "Ok";
     }
   
-    // get a whole number
-    const demeritPoints = Math.floor((speed - speedLimit) / pointsPerExcessSpeed);
+    // getting a whole number
+    const demeritPoints = Math.floor( pointsPerExcessSpeed);
   
-    // take care of the situation when demerit points are too high that it merits a suspension of licence
+    // penalty will be given  the points are more than 12
     if (demeritPoints > 12) {
       return "License suspended";
     }
-  
-    return `Demerit points: ${demeritPoints}`;
   };
-  
-  console.log(calculateDemeritPoints(80));
   
